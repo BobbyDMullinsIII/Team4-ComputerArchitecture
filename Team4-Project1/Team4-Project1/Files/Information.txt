@@ -1,0 +1,22 @@
+﻿=Instruction Set=
+ADDI - Add
+SUBT - Subtract
+BRAN - Branch
+BREQ - Branch if equal
+BRNE - Branch if not equal
+BRLT - Branch if less than
+BRGT - Branch if greater than
+ANDD - And bit-wise operation
+OORR - Or bit-wise operation
+MOVE - Move
+LDRE - Load register
+STRE - Store register
+COMP - Compare register
+STOP - Stop execution
+
+
+=Addressing Modes=
+
+
+=Computing Model=
+Register - Register
