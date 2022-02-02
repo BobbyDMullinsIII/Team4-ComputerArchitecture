@@ -51,55 +51,45 @@ namespace Team4_Project1
         /// <summary>
         /// Master Method for disassembling machine code into custon assembly language instruction set
         /// </summary>
-        /// <param name="input">Full machine code input in single string</param>
-        /// <returns>Full instruction set assembly language output in single string</returns>
         public static void disassemble()
         {
-            string input = inputFile(); //Inputs file text into single string
-
-            string output = ""; //Variable for text output of disassemble process
-
-            //=====================================================================================================//
-            //Insert code for disassembling 'input' machine code string into 'output' assembly language string here//
-            //=====================================================================================================//
-
-            outputFile(output); //Outputs string contents into file
 
         }//end disassemble()
         #endregion
 
-        #region inputFile() Method
+        #region openFile() Method
         /// <summary>
         /// Method for inputting an entire text file into one string
         /// </summary>
         /// <returns>Input string from entire text file</returns>
-        public static string inputFile()
+        public static string openFile()
         {
-            string input = ""; //Variable for storing entire text file input
+            OpenFileDialog fd = new OpenFileDialog();
+            StreamReader reader;
 
-            //==================================================================================================//
-            //Insert code for inputting all text within a text file into a single string here//
-            //==================================================================================================//
+            String Path;
+            String FileContent = "";
 
-            return input;
+            fd.InitialDirectory = "c:\\";
 
-        }//end inputFile()
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                Path = fd.FileName;
+
+                var FileStream = fd.OpenFile();
+
+                reader = new StreamReader(FileStream);
+
+                FileContent = reader.ReadToEnd();
+
+                return FileContent;
+            }
+
+            return FileContent;
+
+        }//end openFile()
         #endregion
 
-        #region outputFile() Method
-        /// <summary>
-        /// Method for outputting an entire text file from one string
-        /// </summary>
-        /// <param name="output">String to output into single text file</param>
-        public static void outputFile(string output)
-        {
-
-            //==================================================================================================//
-            //Insert code for creating file to write to and writing to that file from input string here//
-            //==================================================================================================/
-
-        }//end outputFile()
-        #endregion
 
         #region openInformation() Method
         /// <summary>
