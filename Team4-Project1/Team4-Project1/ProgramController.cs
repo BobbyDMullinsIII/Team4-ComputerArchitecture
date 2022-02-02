@@ -19,6 +19,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace Team4_Project1
 {
@@ -43,6 +45,71 @@ namespace Team4_Project1
             Application.Run(mainForm);
 
         }//end startProgram()
+        #endregion
+
+        #region disassemble() Method
+        /// <summary>
+        /// Master Method for disassembling machine code into custon assembly language instruction set
+        /// </summary>
+        public static void disassemble()
+        {
+
+        }//end disassemble()
+        #endregion
+
+        #region openFile() Method
+        /// <summary>
+        /// Method for inputting an entire text file into one string
+        /// </summary>
+        /// <returns>Input string from entire text file</returns>
+        public static string openFile()
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            StreamReader reader;
+
+            String Path;
+            String FileContent = "";
+
+            fd.InitialDirectory = "c:\\";
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                Path = fd.FileName;
+
+                var FileStream = fd.OpenFile();
+
+                reader = new StreamReader(FileStream);
+
+                FileContent = reader.ReadToEnd();
+
+                return FileContent;
+            }
+
+            return FileContent;
+
+        }//end openFile()
+        #endregion
+
+
+        #region openInformation() Method
+        /// <summary>
+        /// Method for opening instruction set information
+        /// </summary>
+        public static void openInformation()
+        {
+            //Get the current directory
+            string filePath = Directory.GetCurrentDirectory();
+
+            //Move up two parent directories
+            filePath = Directory.GetParent(filePath).FullName;
+            filePath = Directory.GetParent(filePath).FullName;
+
+            filePath += "\\Files\\Information.txt";
+
+            //Open the file located at filePath (which is InstructionSet.txt
+            Process.Start(filePath);
+
+        }//end openInformation()
         #endregion
 
     }//end ProgramController class
