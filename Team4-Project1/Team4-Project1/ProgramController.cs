@@ -47,13 +47,37 @@ namespace Team4_Project1
         }//end startProgram()
         #endregion
 
+        #region assemble() Method
+        /// <summary>
+        /// Master Method for assembling custom assembly language instruction set into machine code
+        /// </summary>
+        /// <returns>Final assemble output (Machine Code)</returns>
+        public static string assemble()
+        {
+            string assembleOutput = "";
+
+            //============================//
+            //INSERT CODE TO ASSEMBLE HERE//
+            //============================//
+
+            return assembleOutput;
+        }//end assemble()
+        #endregion
+
         #region disassemble() Method
         /// <summary>
-        /// Master Method for disassembling machine code into custon assembly language instruction set
+        /// Master Method for disassembling machine code into custom assembly language instruction set
         /// </summary>
-        public static void disassemble()
+        /// <returns>Final disassemble output (Assembly Language)</returns>
+        public static string disassemble()
         {
+            string disassembleOutput = "";
 
+            //===============================//
+            //INSERT CODE TO DISASSEMBLE HERE//
+            //===============================//
+
+            return disassembleOutput;
         }//end disassemble()
         #endregion
 
@@ -90,6 +114,19 @@ namespace Team4_Project1
         }//end openFile()
         #endregion
 
+        #region saveFile() Method
+        /// <summary>
+        /// Method for outputting a text file from a string
+        /// </summary>
+        /// <param name="outputString">String to be output to a text file</param>
+        public static void saveFile(string outputString)
+        {
+            //============================================//
+            //INSERT CODE TO SAVE TO FILE FROM STRING HERE//
+            //============================================//
+
+        }//end saveFile()
+        #endregion
 
         #region openInformation() Method
         /// <summary>
