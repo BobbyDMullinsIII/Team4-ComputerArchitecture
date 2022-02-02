@@ -64,26 +64,27 @@ namespace Team4_Project1
         }
 
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			OpenFileDialog fd = new OpenFileDialog();
-			StreamReader reader;
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            StreamReader reader;
 
-			String Path;
-			String FileContent;
+            String Path;
+            String FileContent;
 
-			fd.InitialDirectory = "c:\\";
+            fd.InitialDirectory = "c:\\";
 
-			if(fd.ShowDialog() == DialogResult.OK)
-			{
-				Path = fd.FileName;
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                Path = fd.FileName;
 
-				var FileStream = fd.OpenFile();
+                var FileStream = fd.OpenFile();
 
-				reader = new StreamReader(FileStream);
+                reader = new StreamReader(FileStream);
 
-				FileContent = reader.ReadToEnd();
+                FileContent = reader.ReadToEnd();
 
-				textInput.Text = FileContent;
-			}
-		}
+                textInput.Text = FileContent;
+            }
+        }
     }
+}
