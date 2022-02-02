@@ -29,31 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.textInput = new System.Windows.Forms.TextBox();
-            this.textOutput = new System.Windows.Forms.TextBox();
+            this.machineTextBox = new System.Windows.Forms.TextBox();
+            this.assemblyTextBox = new System.Windows.Forms.TextBox();
             this.disassembleButton = new System.Windows.Forms.Button();
             this.assembleButton = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolstripFile = new System.Windows.Forms.ToolStripDropDownButton();
-            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.machineCodeLabel = new System.Windows.Forms.Label();
             this.assemblyLanguageLabel = new System.Windows.Forms.Label();
-            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disassembleLabel = new System.Windows.Forms.Label();
+            this.assembleLabell = new System.Windows.Forms.Label();
+            this.clearMachineCodeButton = new System.Windows.Forms.Button();
+            this.clearAssemblyButton = new System.Windows.Forms.Button();
+            this.saveMachineCodeButton = new System.Windows.Forms.Button();
+            this.saveAssemblyButton = new System.Windows.Forms.Button();
+            this.loadMachineCodeButton = new System.Windows.Forms.Button();
+            this.loadAssemblyButton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textInput
+            // machineTextBox
             // 
-            this.textInput.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.textInput, "textInput");
-            this.textInput.Name = "textInput";
+            this.machineTextBox.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.machineTextBox, "machineTextBox");
+            this.machineTextBox.Name = "machineTextBox";
             // 
-            // textOutput
+            // assemblyTextBox
             // 
-            this.textOutput.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.textOutput, "textOutput");
-            this.textOutput.Name = "textOutput";
-            this.textOutput.ReadOnly = true;
+            this.assemblyTextBox.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.assemblyTextBox, "assemblyTextBox");
+            this.assemblyTextBox.Name = "assemblyTextBox";
+            this.assemblyTextBox.ReadOnly = true;
             // 
             // disassembleButton
             // 
@@ -85,16 +92,15 @@
             // 
             this.toolstripFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolstripFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openFileToolStripMenuItem,
             this.instructionsToolStripMenuItem});
             resources.ApplyResources(this.toolstripFile, "toolstripFile");
             this.toolstripFile.Name = "toolstripFile";
             // 
-            // openFileToolStripMenuItem
+            // instructionsToolStripMenuItem
             // 
-            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            resources.ApplyResources(this.openFileToolStripMenuItem, "openFileToolStripMenuItem");
-            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            resources.ApplyResources(this.instructionsToolStripMenuItem, "instructionsToolStripMenuItem");
+            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // machineCodeLabel
             // 
@@ -112,24 +118,92 @@
             this.assemblyLanguageLabel.ForeColor = System.Drawing.Color.White;
             this.assemblyLanguageLabel.Name = "assemblyLanguageLabel";
             // 
-            // instructionsToolStripMenuItem
+            // disassembleLabel
             // 
-            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            resources.ApplyResources(this.instructionsToolStripMenuItem, "instructionsToolStripMenuItem");
-            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
+            resources.ApplyResources(this.disassembleLabel, "disassembleLabel");
+            this.disassembleLabel.ForeColor = System.Drawing.Color.Black;
+            this.disassembleLabel.Name = "disassembleLabel";
+            // 
+            // assembleLabell
+            // 
+            resources.ApplyResources(this.assembleLabell, "assembleLabell");
+            this.assembleLabell.ForeColor = System.Drawing.Color.Black;
+            this.assembleLabell.Name = "assembleLabell";
+            // 
+            // clearMachineCodeButton
+            // 
+            this.clearMachineCodeButton.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.clearMachineCodeButton, "clearMachineCodeButton");
+            this.clearMachineCodeButton.ForeColor = System.Drawing.Color.Black;
+            this.clearMachineCodeButton.Name = "clearMachineCodeButton";
+            this.clearMachineCodeButton.UseVisualStyleBackColor = false;
+            this.clearMachineCodeButton.Click += new System.EventHandler(this.clearMachineCodeButton_Click);
+            // 
+            // clearAssemblyButton
+            // 
+            this.clearAssemblyButton.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.clearAssemblyButton, "clearAssemblyButton");
+            this.clearAssemblyButton.ForeColor = System.Drawing.Color.Black;
+            this.clearAssemblyButton.Name = "clearAssemblyButton";
+            this.clearAssemblyButton.UseVisualStyleBackColor = false;
+            this.clearAssemblyButton.Click += new System.EventHandler(this.clearAssemblyButton_Click);
+            // 
+            // saveMachineCodeButton
+            // 
+            this.saveMachineCodeButton.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.saveMachineCodeButton, "saveMachineCodeButton");
+            this.saveMachineCodeButton.ForeColor = System.Drawing.Color.Black;
+            this.saveMachineCodeButton.Name = "saveMachineCodeButton";
+            this.saveMachineCodeButton.UseVisualStyleBackColor = false;
+            this.saveMachineCodeButton.Click += new System.EventHandler(this.saveMachineCodeButton_Click);
+            // 
+            // saveAssemblyButton
+            // 
+            this.saveAssemblyButton.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.saveAssemblyButton, "saveAssemblyButton");
+            this.saveAssemblyButton.ForeColor = System.Drawing.Color.Black;
+            this.saveAssemblyButton.Name = "saveAssemblyButton";
+            this.saveAssemblyButton.UseVisualStyleBackColor = false;
+            this.saveAssemblyButton.Click += new System.EventHandler(this.saveAssemblyButton_Click);
+            // 
+            // loadMachineCodeButton
+            // 
+            this.loadMachineCodeButton.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.loadMachineCodeButton, "loadMachineCodeButton");
+            this.loadMachineCodeButton.ForeColor = System.Drawing.Color.Black;
+            this.loadMachineCodeButton.Name = "loadMachineCodeButton";
+            this.loadMachineCodeButton.UseVisualStyleBackColor = false;
+            this.loadMachineCodeButton.Click += new System.EventHandler(this.loadMachineCodeButton_Click);
+            // 
+            // loadAssemblyButton
+            // 
+            this.loadAssemblyButton.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.loadAssemblyButton, "loadAssemblyButton");
+            this.loadAssemblyButton.ForeColor = System.Drawing.Color.Black;
+            this.loadAssemblyButton.Name = "loadAssemblyButton";
+            this.loadAssemblyButton.UseVisualStyleBackColor = false;
+            this.loadAssemblyButton.Click += new System.EventHandler(this.loadAssemblyButton_Click);
             // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
+            this.Controls.Add(this.loadAssemblyButton);
+            this.Controls.Add(this.loadMachineCodeButton);
+            this.Controls.Add(this.saveAssemblyButton);
+            this.Controls.Add(this.saveMachineCodeButton);
+            this.Controls.Add(this.clearAssemblyButton);
+            this.Controls.Add(this.clearMachineCodeButton);
+            this.Controls.Add(this.assembleLabell);
+            this.Controls.Add(this.disassembleLabel);
             this.Controls.Add(this.assemblyLanguageLabel);
             this.Controls.Add(this.machineCodeLabel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.assembleButton);
             this.Controls.Add(this.disassembleButton);
-            this.Controls.Add(this.textOutput);
-            this.Controls.Add(this.textInput);
+            this.Controls.Add(this.assemblyTextBox);
+            this.Controls.Add(this.machineTextBox);
             this.Name = "MainForm";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -140,16 +214,23 @@
 
 		#endregion
 
-		private System.Windows.Forms.TextBox textInput;
-		private System.Windows.Forms.TextBox textOutput;
+		private System.Windows.Forms.TextBox machineTextBox;
+		private System.Windows.Forms.TextBox assemblyTextBox;
 		private System.Windows.Forms.Button disassembleButton;
 		private System.Windows.Forms.Button assembleButton;
 		private System.Windows.Forms.ToolStrip toolStrip1;
 		private System.Windows.Forms.ToolStripDropDownButton toolstripFile;
-		private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
 		private System.Windows.Forms.Label machineCodeLabel;
 		private System.Windows.Forms.Label assemblyLanguageLabel;
         private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.Label disassembleLabel;
+        private System.Windows.Forms.Label assembleLabell;
+        private System.Windows.Forms.Button clearMachineCodeButton;
+        private System.Windows.Forms.Button clearAssemblyButton;
+        private System.Windows.Forms.Button saveMachineCodeButton;
+        private System.Windows.Forms.Button saveAssemblyButton;
+        private System.Windows.Forms.Button loadMachineCodeButton;
+        private System.Windows.Forms.Button loadAssemblyButton;
     }
 }
 
