@@ -28,124 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.textInput = new System.Windows.Forms.TextBox();
+            this.textOutput = new System.Windows.Forms.TextBox();
             this.disassembleButton = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.assembleButton = new System.Windows.Forms.Button();
-            this.loadFileButton = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolstripFile = new System.Windows.Forms.ToolStripDropDownButton();
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.machineCodeLabel = new System.Windows.Forms.Label();
+            this.assemblyLanguageLabel = new System.Windows.Forms.Label();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // textInput
+            // 
+            this.textInput.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.textInput, "textInput");
+            this.textInput.Name = "textInput";
+            // 
+            // textOutput
+            // 
+            this.textOutput.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.textOutput, "textOutput");
+            this.textOutput.Name = "textOutput";
+            this.textOutput.ReadOnly = true;
             // 
             // disassembleButton
             // 
             this.disassembleButton.BackColor = System.Drawing.Color.DimGray;
-            this.disassembleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.disassembleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.disassembleButton, "disassembleButton");
             this.disassembleButton.ForeColor = System.Drawing.Color.Black;
-            this.disassembleButton.Location = new System.Drawing.Point(12, 509);
             this.disassembleButton.Name = "disassembleButton";
-            this.disassembleButton.Size = new System.Drawing.Size(200, 40);
-            this.disassembleButton.TabIndex = 0;
-            this.disassembleButton.Text = "Disassemble";
             this.disassembleButton.UseVisualStyleBackColor = false;
             this.disassembleButton.Click += new System.EventHandler(this.disassembleButton_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.DimGray;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 29);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuToolStripMenuItem
-            // 
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.instructionsToolStripMenuItem});
-            this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
-            this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // instructionsToolStripMenuItem
-            // 
-            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.instructionsToolStripMenuItem.Text = "Instructions";
-            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(218, 32);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(554, 517);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
             // 
             // assembleButton
             // 
             this.assembleButton.BackColor = System.Drawing.Color.DimGray;
-            this.assembleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.assembleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.assembleButton, "assembleButton");
             this.assembleButton.ForeColor = System.Drawing.Color.Black;
-            this.assembleButton.Location = new System.Drawing.Point(12, 463);
             this.assembleButton.Name = "assembleButton";
-            this.assembleButton.Size = new System.Drawing.Size(200, 40);
-            this.assembleButton.TabIndex = 3;
-            this.assembleButton.Text = "Assemble";
             this.assembleButton.UseVisualStyleBackColor = false;
             this.assembleButton.Click += new System.EventHandler(this.assembleButton_Click);
             // 
-            // loadFileButton
+            // toolStrip1
             // 
-            this.loadFileButton.BackColor = System.Drawing.Color.DimGray;
-            this.loadFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadFileButton.ForeColor = System.Drawing.Color.Black;
-            this.loadFileButton.Location = new System.Drawing.Point(12, 116);
-            this.loadFileButton.Name = "loadFileButton";
-            this.loadFileButton.Size = new System.Drawing.Size(200, 40);
-            this.loadFileButton.TabIndex = 4;
-            this.loadFileButton.Text = "Load File";
-            this.loadFileButton.UseVisualStyleBackColor = false;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolstripFile});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.Name = "toolStrip1";
+            // 
+            // toolstripFile
+            // 
+            this.toolstripFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolstripFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openFileToolStripMenuItem,
+            this.instructionsToolStripMenuItem});
+            resources.ApplyResources(this.toolstripFile, "toolstripFile");
+            this.toolstripFile.Name = "toolstripFile";
+            // 
+            // openFileToolStripMenuItem
+            // 
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            resources.ApplyResources(this.openFileToolStripMenuItem, "openFileToolStripMenuItem");
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
+            // machineCodeLabel
+            // 
+            resources.ApplyResources(this.machineCodeLabel, "machineCodeLabel");
+            this.machineCodeLabel.BackColor = System.Drawing.Color.Black;
+            this.machineCodeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.machineCodeLabel.ForeColor = System.Drawing.Color.White;
+            this.machineCodeLabel.Name = "machineCodeLabel";
+            // 
+            // assemblyLanguageLabel
+            // 
+            resources.ApplyResources(this.assemblyLanguageLabel, "assemblyLanguageLabel");
+            this.assemblyLanguageLabel.BackColor = System.Drawing.Color.Black;
+            this.assemblyLanguageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.assemblyLanguageLabel.ForeColor = System.Drawing.Color.White;
+            this.assemblyLanguageLabel.Name = "assemblyLanguageLabel";
+            // 
+            // instructionsToolStripMenuItem
+            // 
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            resources.ApplyResources(this.instructionsToolStripMenuItem, "instructionsToolStripMenuItem");
+            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.loadFileButton);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.Controls.Add(this.assemblyLanguageLabel);
+            this.Controls.Add(this.machineCodeLabel);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.assembleButton);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.disassembleButton);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.textOutput);
+            this.Controls.Add(this.textInput);
             this.Name = "MainForm";
-            this.Text = "MainForm";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.Button disassembleButton;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+		private System.Windows.Forms.TextBox textInput;
+		private System.Windows.Forms.TextBox textOutput;
+		private System.Windows.Forms.Button disassembleButton;
+		private System.Windows.Forms.Button assembleButton;
+		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStripDropDownButton toolstripFile;
+		private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+		private System.Windows.Forms.Label machineCodeLabel;
+		private System.Windows.Forms.Label assemblyLanguageLabel;
         private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button assembleButton;
-        private System.Windows.Forms.Button loadFileButton;
     }
 }
 
