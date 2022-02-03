@@ -121,9 +121,14 @@ namespace Team4_Project1
         /// <param name="outputString">String to be output to a text file</param>
         public static void saveFile(string outputString)
         {
-            //============================================//
-            //INSERT CODE TO SAVE TO FILE FROM STRING HERE//
-            //============================================//
+               SaveFileDialog sf = new SaveFileDialog();
+
+               sf.ShowDialog();
+
+               if(sf.FileName != "")
+			{
+                    File.WriteAllText(sf.FileName, outputString);
+               }
 
         }//end saveFile()
         #endregion
