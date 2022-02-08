@@ -51,8 +51,9 @@ namespace Team4_Project1
         /// <summary>
         /// Master Method for assembling custom assembly language instruction set into machine code
         /// </summary>
+        /// <param name="assemblyString"> Custom instruction set assembly language string to be assembled</param>
         /// <returns>Final assemble output (Machine Code)</returns>
-        public static string assemble()
+        public static string assemble(string assemblyString)
         {
             string assembleOutput = "";
 
@@ -68,14 +69,45 @@ namespace Team4_Project1
         /// <summary>
         /// Master Method for disassembling machine code into custom assembly language instruction set
         /// </summary>
+        /// <param name="machineString">Machine code string to be disassembled</param>
         /// <returns>Final disassemble output (Assembly Language)</returns>
-        public static string disassemble()
+        public static string disassemble(string machineString)
         {
             string disassembleOutput = "";
 
             //===============================//
             //INSERT CODE TO DISASSEMBLE HERE//
             //===============================//
+
+            string yadayadayada = "6F";
+            sbyte instruct = Convert.ToSByte(yadayadayada, 16);
+            sbyte opcode = (sbyte)(instruct << 3);
+            sbyte register = 0;
+
+            switch(instruct)
+            {
+                case sbyte n when (n > 0 && n <= 7):
+                    register = instruct;
+                    break;
+                case sbyte n when (n > 7 && n <= 15):
+                    register = (sbyte)(instruct >> 1);
+                    break;
+                case sbyte n when (n > 15 && n <= 31):
+                    register = (sbyte)(instruct >> 2);
+                    break;
+                case sbyte n when (n > 31 && n <= 63):
+                    register = (sbyte)(instruct >> 3);
+                    break;
+                case sbyte n when (n > 63 && n <= 127):
+                    register = (sbyte)(instruct >> 4);
+                    break;
+                case sbyte n when (n > 127):
+                    register = (sbyte)(instruct >> 5);
+                    break;
+            }
+
+            disassembleOutput = "Opcode: " + opcode;
+            disassembleOutput += "\r\nRegister: " + register;
 
             return disassembleOutput;
         }//end disassemble()
