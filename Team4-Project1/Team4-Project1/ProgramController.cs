@@ -81,30 +81,31 @@ namespace Team4_Project1
 
             string yadayadayada = "6F";
             sbyte instruct = Convert.ToSByte(yadayadayada, 16);
-            sbyte opcode = (sbyte)(instruct << 3);
             sbyte register = 0;
 
             switch(instruct)
             {
-                case sbyte n when (n > 0 && n <= 7):
+                case sbyte n when (n > 0 && n <= 7):    //1 to 111
                     register = instruct;
                     break;
-                case sbyte n when (n > 7 && n <= 15):
+                case sbyte n when (n > 7 && n <= 15):   //1000 to 1111
                     register = (sbyte)(instruct >> 1);
                     break;
-                case sbyte n when (n > 15 && n <= 31):
+                case sbyte n when (n > 15 && n <= 31):  //10000 to 11111
                     register = (sbyte)(instruct >> 2);
                     break;
-                case sbyte n when (n > 31 && n <= 63):
+                case sbyte n when (n > 31 && n <= 63):  //100000 to 111111
                     register = (sbyte)(instruct >> 3);
                     break;
-                case sbyte n when (n > 63 && n <= 127):
+                case sbyte n when (n > 63 && n <= 127): //1000000 to 1111111
                     register = (sbyte)(instruct >> 4);
                     break;
-                case sbyte n when (n > 127):
+                case sbyte n when (n > 127):            //10000000 to 11111111
                     register = (sbyte)(instruct >> 5);
                     break;
             }
+
+            sbyte opcode = (sbyte)(instruct << 3);
 
             disassembleOutput = "Opcode: " + opcode;
             disassembleOutput += "\r\nRegister: " + register;
