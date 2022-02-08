@@ -40,7 +40,7 @@ namespace Team4_Project1
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void assembleButton_Click(object sender, EventArgs e)
         {
-            machineTextBox.Text = ProgramController.assemble();
+            machineTextBox.Text = ProgramController.assemble(assemblyTextBox.Text);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Team4_Project1
         /// <param name="e">arguments for event (auto-generated, unused here)</param>
         private void disassembleButton_Click(object sender, EventArgs e)
         {
-            assemblyTextBox.Text = ProgramController.disassemble();
+            assemblyTextBox.Text = ProgramController.disassemble(machineTextBox.Text);
         }
 
         /// <summary>
