@@ -3,7 +3,7 @@
 //	Solution/Project:  Team4_Project1/Team4_Project1
 //	File Name:         ProgramController.cs
 //	Description:       ProgramController class for controlling majority of program functionality
-//	Course:            CSCI-4717-201 - Software Engineering I
+//	Course:            CSCI-4717-201 - Comp Architecture
 //	Authors:           Zachary Lykins, lykinsz@etsu.edu            
 //	                   Bobby Mullins, mullinsbd@etsu.edu
 //	                   Christopher Poteet, poteetc1@etsu.edu

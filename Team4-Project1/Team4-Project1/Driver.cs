@@ -3,7 +3,7 @@
 //	Solution/Project:  Team4_Project1/Team4_Project1
 //	File Name:         Driver.cs
 //	Description:       Main Driver for Project 1 program to demonstrate instruction set
-//	Course:            CSCI-4717-201 - Software Engineering I
+//	Course:            CSCI-4717-201 - Comp Architecture
 //	Authors:           Zachary Lykins, lykinsz@etsu.edu            
 //	                   Bobby Mullins, mullinsbd@etsu.edu
 //	                   Christopher Poteet, poteetc1@etsu.edu
