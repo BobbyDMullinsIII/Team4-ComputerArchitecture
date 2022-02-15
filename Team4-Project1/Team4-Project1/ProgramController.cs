@@ -56,9 +56,7 @@ namespace Team4_Project1
         {
             string assembleOutput = "";
 
-            //============================//
-            //INSERT CODE TO ASSEMBLE HERE//
-            //============================//
+            
 
             return assembleOutput;
         }//end assemble()
@@ -66,19 +64,52 @@ namespace Team4_Project1
 
         #region disassemble() Method
         /// <summary>
-        /// Master Method for disassembling machine code into custom assembly language instruction set
+        /// Master Method for disassembling opcode into assembly
         /// </summary>
         /// <returns>Final disassemble output (Assembly Language)</returns>
-        public static string disassemble()
+        public static Int32 [] disassemble(string machineString)
         {
-            string disassembleOutput = "";
+            Int32[] tokens = new Int32[2];
+          
+            Int32 inp = Convert.ToInt32(machineString, 16);
+            tokens[0] = (inp & 248);                            // AND with binary (11111000) to keep all 1 and get 5 bytes of opcode
+            tokens[1] = (inp & 7);                              // AND  with binary (00000111) to keep all 1 and get 3 bytes for registers
 
-            //===============================//
-            //INSERT CODE TO DISASSEMBLE HERE//
-            //===============================//
-
-            return disassembleOutput;
+            return tokens;
+                 
         }//end disassemble()
+            #endregion
+
+        #region dissassembleData() Method
+        /// <summary>
+        /// Method for calculating tokens based on instruction parameters/registers
+        /// </summary>
+        /// <param name="machineString">Input machine code line after instruction to convert to tokens</param>
+        /// <returns>Int32 token array from instruction parameters/registers</returns>
+        public static Int32[] disassembleData(string machineString)
+        {
+            Int32[] tokens = new Int32[3];
+            Int32 data = Convert.ToInt32(machineString, 16);
+            tokens[0] = (data & 3);
+            switch (tokens[0])
+            {
+                case Int32 n when (n == 0):
+                    tokens[1] = (data & 14680064);
+                    break;
+                case Int32 n when (n == 1):
+                    tokens[1] = (data & 16777152);
+                    break;
+                case Int32 n when (n == 2):
+                    tokens[1] = (data & 16777212);
+                    break;
+                case Int32 n when (n == 3):
+                    tokens[1] = (data & 14680064);
+                    tokens[2] = (data & 1835008);
+                    break;
+
+            }
+            return tokens;
+        }
         #endregion
 
         #region openFile() Method
@@ -121,14 +152,14 @@ namespace Team4_Project1
         /// <param name="outputString">String to be output to a text file</param>
         public static void saveFile(string outputString)
         {
-               SaveFileDialog sf = new SaveFileDialog();
+            SaveFileDialog sf = new SaveFileDialog();
 
-               sf.ShowDialog();
+            sf.ShowDialog();
 
-               if(sf.FileName != "")
-			{
-                    File.WriteAllText(sf.FileName, outputString);
-               }
+            if (sf.FileName != "")
+            {
+                File.WriteAllText(sf.FileName, outputString);
+            }
 
         }//end saveFile()
         #endregion
