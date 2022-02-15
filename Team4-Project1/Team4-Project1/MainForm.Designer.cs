@@ -54,13 +54,13 @@
             this.machineTextBox.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.machineTextBox, "machineTextBox");
             this.machineTextBox.Name = "machineTextBox";
+            this.machineTextBox.TextChanged += new System.EventHandler(this.machineTextBox_TextChanged);
             // 
             // assemblyTextBox
             // 
             this.assemblyTextBox.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.assemblyTextBox, "assemblyTextBox");
             this.assemblyTextBox.Name = "assemblyTextBox";
-            this.assemblyTextBox.ReadOnly = true;
             // 
             // disassembleButton
             // 
