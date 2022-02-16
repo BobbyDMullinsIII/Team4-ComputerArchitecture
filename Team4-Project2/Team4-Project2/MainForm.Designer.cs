@@ -54,7 +54,6 @@
             this.machineTextBox.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.machineTextBox, "machineTextBox");
             this.machineTextBox.Name = "machineTextBox";
-            this.machineTextBox.TextChanged += new System.EventHandler(this.machineTextBox_TextChanged);
             // 
             // assemblyTextBox
             // 
